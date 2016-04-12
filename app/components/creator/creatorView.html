@@ -1,0 +1,55 @@
+<form class="pizzaCreator" method="get" ng-controller="PizzaCreatorController as creator" ng-init="construct()" ng-submit="submitOrder()">
+	<h1>Welcome to PizzaFat&trade; pizza creator, where you can create your own pizza!</h1>
+
+
+	<div class="pizzaSize">
+		<h2>Step1: Choose pizza size</h2>
+		<ul>
+			<li ng-repeat="base in pizzaSizes">
+				<label for="{{'size-' + base.id}}">{{base.size}} ( {{base.price}} )</label>
+				<input type="radio" name="size" id="{{'size-' + base.id}}" value="{{base.id}}" ng-model="$parent.order.size">
+			</li>
+		</ul>
+	</div>
+
+	<div class="toppings" ng-show="order.total() > 0">
+		<h2>Step2: Choose toppings</h2>
+		<small>Five cheapest toppings included in the pizza price!</small>
+		<div class="desc">
+			<span class="info vegan">V</span>Vegetarian
+			<span class="info glutenFree">G</span>Gluten-free
+			<span class="info hot">H</span>Hot & Spicy
+		</div>
+		<ul>
+			<li 
+				class="topping" 
+				ng-repeat="topping in toppings"
+				ng-class="{'selected': order.toppings.indexOf(topping.id) > -1}" 
+				ng-click="toggleTopping(topping)"
+				>
+				<input 
+					type="checkbox" 
+					id="{{'topping-' + topping.id}}"
+					name="toppings[]"
+					value="{{topping.id}}"
+					class="topping"
+					ng-checked="order.toppings.indexOf(topping.id) > -1"
+				>
+				<label for="{{'topping-' + topping.id}}" ng-bind="topping.name">
+					
+				</label> <small ng-bind-template="(&pound;{{topping.price}})"></small>
+				<span class="info vegan" ng-show="topping.info[0]">V</span>
+				<span class="info glutenFree" ng-show="topping.info[1]">G</span>
+				<span class="info hot" ng-show="topping.info[2]">H</span>
+			</li>
+			
+		</ul>
+
+	</div>
+
+	<button ng-disabled="!(order.size && order.toppings.length > 0)" type="submit" value="submit">Submit</button>
+
+	<div ng-model="order">{{order}}</div>
+	<h3 ng-model="order">Total: &pound;{{order.price}} </h3>
+	
+	</form>
