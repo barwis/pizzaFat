@@ -1,0 +1,11 @@
+<div ng-include="'app/partials/header.html'" ng-controller="BasketCtrl" ng-init="loadState()"></div>
+
+<div class="wrapper">
+	<div class="basket" ng-controller="BasketCtrl">
+		<ul ng-repeat="item in items">
+			<li>[{{item.id}}] {{item.size.size}} pizza: &pound;{{item.price}} <a class="icon-cross" ng-click="removeFromBasket($index)"></a></li>
+		</ul>
+
+		<h1>Total: &pound;{{totalPrice.toFixed(2)}}</h1>
+	</div>
+</div>

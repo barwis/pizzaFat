@@ -1,0 +1,293 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('icomoon.eot?p27in9');
+    src:    url('icomoon.eot?p27in9#iefix') format('embedded-opentype'),
+        url('icomoon.ttf?p27in9') format('truetype'),
+        url('icomoon.woff?p27in9') format('woff'),
+        url('icomoon.svg?p27in9#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shopping-basket:before {
+    content: "\e900";
+}
+
+.icon-cross {
+	cursor: pointer;
+	float: right;
+	padding: 8px;
+	border-radius: 50px;
+	background: #ee3a43;
+	color: white;
+	border: 1px solid transparent;
+}
+
+.icon-cross:hover {
+	color: #ee3a43;
+	border: 1px solid #ee3a43;
+	background: white;
+}
+
+.icon-cross:before {
+    content: "\e901";
+}
+
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	padding-top: 80px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	display: inline-block;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	height: 60px;
+}
+
+header ul {
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+header ul li {
+	line-height: 60px;
+}
+
+header ul li a {
+	display: block;
+	line-height: 60px;
+	padding: 0 20px;
+	text-decoration: none;
+	cursor: pointer;
+	color: #ee3a43;
+	font-size: 20px;
+}
+
+header ul li a {
+	background: url(../img/header_logo.gif) 0 0 no-repeat;
+	padding-left: 70px;
+}
+
+.home .click {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.basketSummary {
+	float: right;
+	line-height: 60px;
+	padding: 0 20px;
+}
+
+.basketSummary a {
+	display: inline-block;
+	line-height: 60px;
+	color: #ee3a43;
+	text-decoration: none;
+	padding: 0 15px;
+}
+
+.basketSummary a:hover {
+	background: #ee3a43;
+	color: white;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+.pizzaCreator {
+	display: block;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.pizzaCreator h2 {
+	background: #ee3a43;
+	color: white;
+	line-height: 40px;
+	padding: 0 15px;
+}
+
+.pizzaSize ul {
+	font-size: 0;
+}
+
+.pizzaSize ul li {
+	width: 33.3%;
+	font-size: 16px;
+	margin: 5px 0;
+	box-sizing: border-box;
+	text-align: center;
+	display: inline-block;
+}
+
+.pizzaSize ul li input {
+	visibility: hidden;
+	position: absolute;
+}
+
+.pizzaSize ul li label {
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 61px;
+	cursor: pointer;
+}
+
+.pizzaSize ul li input:checked + label {
+	background: #ee3a43;
+	color: white;
+}
+
+.pizzaSize ul li label {
+	background: url(../img/size_small.gif) 10% 50% no-repeat;
+}
+
+.pizzaSize ul li + li label {
+	background: url(../img/size_medium.gif) 10% 50% no-repeat;
+}
+
+.pizzaSize ul li + li + li label {
+	background: url(../img/size_large.gif) 10% 50% no-repeat;
+}
+
+.topping {
+	display: inline-block;
+	background: #ffffff;
+	padding: 5px 25px 5px 25px;
+	position: relative;
+	line-height: 24px;
+	cursor: pointer;
+	border: 1px solid #cacaca;
+}
+
+.selected {
+	color: white;
+	background: #006391;
+}
+
+.extra:after {
+	content: 'EXTRA';
+	font-size: 10px;
+	display: block;
+	position: absolute;
+	transform: rotate(-90deg);
+	transform-origin: 0% 0%;
+	padding: 2px;
+	bottm:0;
+	left: 0px;
+	width: 30px;
+	text-align: center;
+	top:0;
+	background: red;
+	line-height: 10px;
+}
+
+.toppings ul li {
+	width: 48%;
+	margin: 5px 1%;
+	box-sizing: border-box;
+}
+
+.toppings ul li input {
+	display: none;
+}
+
+.toppings ul li label {
+	pointer-events: none;
+}
+
+.desc {
+	text-align: center;
+	margin: 20px auto 10px;
+}
+
+.desc .info {
+	float: none;
+	margin-left: 20px;
+}
+
+.desc .info:first-child {
+	margin-left: 0;
+}
+
+.debug {
+	color: #909090;
+}
+
+.info {
+	float: right;
+	display: inline-block;
+	margin: 2px;
+	border: 1px solid white;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 12px;
+	color: white;
+	font-size: 12px;
+}
+
+.info.vegan {
+	background: #008913;
+}
+
+.info.glutenFree {
+	background: #006391;
+}
+
+.info.hot {
+	background: #e21737;
+}
+.basket {
+	font-size: 16px;
+}
+.basket h1 {
+	text-align: right;
+}
+
+.basket ul li {
+	border: 1px solid #bababa;
+	width: 100%;
+	padding: 5px 15px;
+	line-height: 35px;
+	margin-bottom: 5px;
+	box-sizing: border-box;
+}

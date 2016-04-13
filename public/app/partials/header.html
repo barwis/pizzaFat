@@ -1,0 +1,14 @@
+<header>
+	<ul>
+		<li><a ui-sref-active="active" href="#/home">home</a></li>
+	</ul>
+	<div class="basketSummary">
+		<a ui-sref-active="active" href="#/basket">
+			<span class="icon-shopping-basket"></span>
+			<ng-pluralize 
+				count="items.length" 
+				when="{'0': 'No items', 'one': '1 item', 'other' : '{{items.length}} items'}" >
+			</ng-pluralize> (&pound;{{totalPrice.toFixed(2)}})
+		</a>
+	</div>
+</header>
