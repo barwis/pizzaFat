@@ -1,3 +1,32 @@
+
+/* ========================================================================= */
+/* ------------------------------------------------------------------------- */
+/*
+/* 			PizzaFat!
+/*			Author: Bartosz Wisniewksi
+/* 			Date: 13.04.2016
+/*
+/*			TABLE OF CONTENTS
+/*			-----------------
+/*			1. Global styles
+/*			2. Common
+/*			3. Homepage
+/*			4. Creator
+/*			5. Basket
+/*
+/*
+/*
+/* ------------------------------------------------------------------------- */
+/* ========================================================================= */
+
+
+
+/* ========================================================================= */
+/*
+/* 1. Global Styles
+/*
+/* ========================================================================= */
+
 @font-face {
     font-family: 'icomoon';
     src:    url('icomoon.eot?p27in9');
@@ -24,30 +53,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-shopping-basket:before {
-    content: "\e900";
-}
-
-.icon-cross {
-	cursor: pointer;
-	float: right;
-	padding: 8px;
-	border-radius: 50px;
-	background: #ee3a43;
-	color: white;
-	border: 1px solid transparent;
-}
-
-.icon-cross:hover {
-	color: #ee3a43;
-	border: 1px solid #ee3a43;
-	background: white;
-}
-
-.icon-cross:before {
-    content: "\e901";
-}
-
 body {
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
@@ -64,6 +69,19 @@ ul {
 li {
 	display: inline-block;
 }
+
+.wrapper {
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+
+/* ========================================================================= */
+/*
+/* 2. Common
+/*
+/* ========================================================================= */
 
 header {
 	position: fixed;
@@ -99,11 +117,28 @@ header ul li a {
 	padding-left: 70px;
 }
 
-.home .click {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+.icon-shopping-basket:before {
+    content: "\e900";
+}
+
+.icon-cross {
+	cursor: pointer;
+	float: right;
+	padding: 8px;
+	border-radius: 50px;
+	background: #ee3a43;
+	color: white;
+	border: 1px solid transparent;
+}
+
+.icon-cross:hover {
+	color: #ee3a43;
+	border: 1px solid #ee3a43;
+	background: white;
+}
+
+.icon-cross:before {
+    content: "\e901";
 }
 
 .basketSummary {
@@ -125,11 +160,26 @@ header ul li a {
 	color: white;
 }
 
-.wrapper {
-	width: 100%;
-	max-width: 1140px;
-	margin: 0 auto;
+
+/* ========================================================================= */
+/*
+/* 3. Homepage
+/*
+/* ========================================================================= */
+
+.home .click {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
+
+
+/* ========================================================================= */
+/*
+/* 4. Creator
+/*
+/* ========================================================================= */
 
 .pizzaCreator {
 	display: block;
@@ -247,10 +297,6 @@ header ul li a {
 	margin-left: 0;
 }
 
-.debug {
-	color: #909090;
-}
-
 .info {
 	float: right;
 	display: inline-block;
@@ -276,22 +322,6 @@ header ul li a {
 .info.hot {
 	background: #e21737;
 }
-.basket {
-	font-size: 16px;
-}
-.basket h1 {
-	text-align: right;
-}
-
-.basket ul li {
-	border: 1px solid #bababa;
-	width: 100%;
-	padding: 5px 15px;
-	line-height: 35px;
-	margin-bottom: 5px;
-	box-sizing: border-box;
-}
-
 
 .addToBasket {
 	background: url(../img/add_to_basket.gif);
@@ -302,3 +332,28 @@ header ul li a {
 	border: none;
 	text-indent: -9999px;
 }
+
+/* ========================================================================= */
+/*
+/* 5. Basket
+/*
+/* ========================================================================= */
+
+.basket ul li {
+	border: 1px solid #bababa;
+	width: 100%;
+	padding: 5px 15px;
+	line-height: 35px;
+	margin-bottom: 5px;
+	box-sizing: border-box;
+}
+
+.basket {
+	font-size: 16px;
+}
+.basket h1 {
+	text-align: right;
+}
+
+/* ========================================================================= */
+/* ========================================================================= */
