@@ -18,7 +18,6 @@
 					ng-click="selectSize(base.id)"
 					>
 				<label for="{{'size-' + base.id}}">{{base.size}} ( {{base.price}} )</label>
-				
 			</li>
 		</ul>
 	</div>
@@ -53,15 +52,12 @@
 				<span class="info glutenFree" ng-show="topping.info[1]">G</span>
 				<span class="info hot" ng-show="topping.info[2]">H</span>
 			</li>
-			
 		</ul>
-
 	</div>
 
 	<div class="addToBasket" ng-show="(pizza.size !== null && pizza.toppings.length > 2)">
-	<button ng-click="addToBasket()">Add to basket!</button></div>
+	<button class="addToBasket" ng-click="addToBasket()">Add to basket!</button></div>
 
-	<code class="debug" ng-model="order">{{pizza}}</code>
 	<h3 ng-model="order">Total: &pound;{{totalPrice}} </h3>
 	
 </form>

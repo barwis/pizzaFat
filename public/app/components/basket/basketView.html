@@ -3,7 +3,7 @@
 <div class="wrapper">
 	<div class="basket" ng-controller="BasketCtrl">
 		<ul ng-repeat="item in items">
-			<li>[{{item.id}}] {{item.size.size}} pizza: &pound;{{item.price}} <a class="icon-cross" ng-click="removeFromBasket($index)"></a></li>
+			<li>{{item.size.size}} pizza: &pound;{{item.price}} <a class="icon-cross" ng-click="removeFromBasket($index)"></a></li>
 		</ul>
 
 		<h1>Total: &pound;{{totalPrice.toFixed(2)}}</h1>

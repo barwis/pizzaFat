@@ -291,3 +291,14 @@ header ul li a {
 	margin-bottom: 5px;
 	box-sizing: border-box;
 }
+
+
+.addToBasket {
+	background: url(../img/add_to_basket.gif);
+	width: 250px;
+	height: 80px;
+	display: block;
+	margin: 40px auto;
+	border: none;
+	text-indent: -9999px;
+}
