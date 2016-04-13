@@ -8,16 +8,16 @@ angular
 		$http
 			.get('/shopData.json')
 			.then(function(data) {
-				deferred.resolve(data)
+				deferred.resolve(data);
 			});
 
 		this.getProducts = function() {
 			return deferred.promise;
-		}
+		};
 	})
 
 	.controller('CreatorCtrl', function($scope, CreatorSrvc, BasketService) {
-		$scope.welcomeMessage = "Welcome to pizza creator!"
+		$scope.welcomeMessage = "Welcome to pizza creator!";
 		$scope.pizzaSizes = [];
 		$scope.pizzaToppings = [];
 		$scope.totalPrice = 0;
@@ -36,12 +36,12 @@ angular
 		promise.then(function(data) {
 			$scope.pizzaSizes = data.data.products.pizza.sizes;
 			$scope.pizzaToppings = data.data.products.pizza.toppings;
-		})
+		});
 
 		$scope.selectSize = function(id) {
-			$scope.pizza.size = $scope.pizzaSizes.filter(function(el) { return el.id == id})[0];
+			$scope.pizza.size = $scope.pizzaSizes.filter(function(el) { return el.id == id; })[0];
 			$scope.updatePrice();
-		}
+		};
 
 		$scope.reset = function() {
 			$scope.pizza = {
@@ -50,24 +50,22 @@ angular
 				toppings: [],
 				price: 0
 			};
-		}
+		};
 
 		$scope.updatePrice = function() {
 			var price = 0;
-			// get size price
-			price += $scope.pizza.size.price
+			price += $scope.pizza.size.price;
 
 			var selectedToppings = [];
 			for (var i = 0; i < $scope.pizza.toppings.length; i++) {
-				selectedToppings.push($scope.pizzaToppings.filter(function(el) { return el.id == $scope.pizza.toppings[i].id})[0]);
+				selectedToppings.push($scope.pizzaToppings.filter(function(el) { return el.id == $scope.pizza.toppings[i].id; })[0]);
 			}
 
-			
 			if (selectedToppings.length > 3) {
 				// sort selected toppings by price
 				selectedToppings.sort(function(a,b) {return (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0);} );
 				for (var i = 3; i < selectedToppings.length; i++) {
-					price += selectedToppings[i].price
+					price += selectedToppings[i].price;
 				}
 			}
 
@@ -75,7 +73,7 @@ angular
 			// which can result displaying price like 1.60000000001
 			$scope.totalPrice = parseFloat(price.toFixed(2));
 			$scope.pizza.price = parseFloat(price.toFixed(2));
-		}
+		};
 
 		$scope.addToBasket = function() {
 			// quickly generate uuid
@@ -89,19 +87,18 @@ angular
 			BasketService.totalPrice += $scope.updatePrice();
 			$scope.reset();
 			window.location.href = '#/basket';
-		}
+		};
 
 		$scope.toggleTopping = function(topping) {
 			var index = this.pizza.toppings.indexOf(topping);
 
 			// if topping already selected
 			if (index > -1 ) {
-				$scope.pizza.toppings.splice(index, 1)
+				$scope.pizza.toppings.splice(index, 1);
 			} else {
-				$scope.pizza.toppings.push(topping)
+				$scope.pizza.toppings.push(topping);
 			}
 			$scope.pizza.toppings.sort();
 			$scope.updatePrice();
-		}
-
-	})
+		};
+	});

@@ -7,7 +7,7 @@ Angular app split into three component/pages: home, creator and basket (all thre
 
 Basket content shared between modules through BasketService.
 
-List of toppings loaded from "external" (well, it's not really external, but loaded via http request anyway).
+List of toppings loaded from "external" (well, it's not really external, but loaded via http request anyway), available under shopData.json.
 
 Basked is being stored in localStorage.
 
